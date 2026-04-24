@@ -27,6 +27,38 @@ const bookingSchema = new mongoose.Schema({
     type: [Date],
     default: undefined,
   },
+  careType: {
+    type: String,
+    enum: ['Boarding', 'Sitting'],
+    default: undefined,
+  },
+  dropOffTime: {
+    type: String,
+  },
+  pickUpTime: {
+    type: String,
+  },
+  feedingInstructions: {
+    type: String,
+  },
+  medicationInstructions: {
+    type: String,
+  },
+  emergencyContactName: {
+    type: String,
+  },
+  emergencyContactPhone: {
+    type: String,
+  },
+  specialCareNotes: {
+    type: String,
+  },
+  dailyRate: {
+    type: Number,
+  },
+  totalPrice: {
+    type: Number,
+  },
   status: {
     type: String,
     enum: ['Pending', 'Approved', 'Rejected', 'Cancelled'],
