@@ -8,3 +8,12 @@ Both boarding and sitting are stored under `serviceType: "Boarding"` for compati
 
 - `Boarding`: overnight care at the boarding facility.
 - `Sitting`: daily pet sitting care.
+
+## Rates
+
+Rates are calculated on the backend to avoid trusting frontend totals.
+
+- Boarding daily rate: `2500`
+- Sitting daily rate: `1800`
+
+`totalPrice` is calculated as `dailyRate * boardingDates.length`.
