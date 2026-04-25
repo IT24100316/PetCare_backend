@@ -36,3 +36,9 @@ Boarding and sitting bookings can store the following care details:
 `GET /api/bookings/boarding/services`
 
 Returns the supported care types, their daily rates, and the daily facility capacity. Use this endpoint to render service cards or price previews in the frontend.
+
+## Check Availability
+
+`GET /api/bookings/boarding/available?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD`
+
+Returns one item per date with `count`, `capacity`, `remainingCapacity`, and `status`. A date becomes `full` when approved bookings reach the configured capacity.
