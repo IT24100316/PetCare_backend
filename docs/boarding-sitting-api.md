@@ -48,3 +48,9 @@ Returns one item per date with `count`, `capacity`, `remainingCapacity`, and `st
 `POST /api/bookings/boarding/book`
 
 Required fields are `petId`, `careType`, and `boardingDates`. The backend verifies pet ownership, rejects past start dates, prevents duplicate active dates for the same pet, and calculates the price.
+
+## Update Pending Booking
+
+`PATCH /api/bookings/boarding/:id/update`
+
+Users can update dates, care type, and care instructions while the booking is still `Pending`. Approved, rejected, and cancelled bookings cannot be edited from this endpoint.
