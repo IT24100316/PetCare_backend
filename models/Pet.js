@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const petSchema = new mongoose.Schema({
   ownerId: {
     type: mongoose.Schema.Types.ObjectId,
