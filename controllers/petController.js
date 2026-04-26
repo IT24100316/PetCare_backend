@@ -19,7 +19,6 @@ const addPet = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 const getPetById = async (req, res) => {
   try {
     const pet = await Pet.findById(req.params.id);
