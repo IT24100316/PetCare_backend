@@ -54,3 +54,9 @@ Required fields are `petId`, `careType`, and `boardingDates`. The backend verifi
 `PATCH /api/bookings/boarding/:id/update`
 
 Users can update dates, care type, and care instructions while the booking is still `Pending`. Approved, rejected, and cancelled bookings cannot be edited from this endpoint.
+
+## Cancel Booking
+
+`DELETE /api/bookings/boarding/:id`
+
+Users can cancel their own future boarding or sitting bookings. The endpoint rejects cancellation once the first booking day has already started.
