@@ -11,6 +11,7 @@ const addRecord = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 const getRecordsByPet = async (req, res) => {
   try {
     const { petId } = req.params;
