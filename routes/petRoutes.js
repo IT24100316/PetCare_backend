@@ -1,5 +1,5 @@
 const express = require('express');
-const { addPet, getPets, updatePet, deletePet } = require('../controllers/petController');
+const { addPet, getPets, getPetById, updatePet, deletePet } = require('../controllers/petController');
 const { protect } = require('../middleware/authMiddleware');
 
 const router = express.Router();
@@ -12,6 +12,7 @@ router.route('/')
   .get(getPets);
 
 router.route('/:id')
+  .get(getPetById)
   .put(updatePet)
   .delete(deletePet);
 

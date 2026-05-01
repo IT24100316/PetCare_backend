@@ -20,6 +20,16 @@ const addPet = async (req, res) => {
   }
 };
 
+const getPetById = async (req, res) => {
+  try {
+    const pet = await Pet.findById(req.params.id);
+    if (!pet) return res.status(404).json({ message: 'Pet not found' });
+    res.status(200).json(pet);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 const getPets = async (req, res) => {
   try {
     const pets = await Pet.find({ ownerId: req.user._id });
@@ -74,4 +84,4 @@ const deletePet = async (req, res) => {
   }
 };
 
-module.exports = { addPet, getPets, updatePet, deletePet };
+module.exports = { addPet, getPets, getPetById, updatePet, deletePet };

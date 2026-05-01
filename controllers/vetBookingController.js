@@ -177,7 +177,7 @@ const cancelBooking = async (req, res) => {
 
     booking.status = 'Cancelled';
     booking.lockedUntil = undefined;
-    booking.isInstantSlot = true;
+    // NOTE: do NOT set isInstantSlot=true here - this corrupts future bookings of same slot
     await booking.save();
 
     const { sendNotification } = require('../utils/notificationService');
