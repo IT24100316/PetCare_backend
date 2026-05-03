@@ -241,3 +241,49 @@ Content-Type: application/json
   "password": "password123",
   "role": "Admin"
 }
+
+
+### Boarding/Sitting: Get service rates
+GET http://localhost:5000/api/bookings/boarding/services
+Authorization: Bearer <USER_TOKEN>
+
+### Boarding/Sitting: Check date availability
+GET http://localhost:5000/api/bookings/boarding/available?startDate=2026-05-20&endDate=2026-05-22
+Authorization: Bearer <USER_TOKEN>
+
+### Boarding/Sitting: Create a sitting booking
+POST http://localhost:5000/api/bookings/boarding/book
+Content-Type: application/json
+Authorization: Bearer <USER_TOKEN>
+
+{
+  "petId": "<PET_ID>",
+  "careType": "Sitting",
+  "boardingDates": ["2026-05-20", "2026-05-21", "2026-05-22"],
+  "dropOffTime": "09:00",
+  "pickUpTime": "17:00",
+  "feedingInstructions": "Feed twice a day",
+  "medicationInstructions": "Give allergy tablet after dinner",
+  "emergencyContactName": "Nimal Perera",
+  "emergencyContactPhone": "0771234567",
+  "specialCareNotes": "Gets nervous around loud sounds"
+}
+
+### Boarding/Sitting: Update pending booking
+PATCH http://localhost:5000/api/bookings/boarding/<BOOKING_ID>/update
+Content-Type: application/json
+Authorization: Bearer <USER_TOKEN>
+
+{
+  "careType": "Boarding",
+  "boardingDates": ["2026-05-21", "2026-05-22"],
+  "specialCareNotes": "Needs a quiet sleeping area"
+}
+
+### Boarding/Sitting Manager: Filter bookings
+GET http://localhost:5000/api/bookings/boarding?status=Pending&careType=Sitting&startDate=2026-05-20&endDate=2026-05-22
+Authorization: Bearer <BOARDING_MANAGER_TOKEN>
+
+### Boarding/Sitting Manager: Summary
+GET http://localhost:5000/api/bookings/boarding/summary
+Authorization: Bearer <BOARDING_MANAGER_TOKEN>
