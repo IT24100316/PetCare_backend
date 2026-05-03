@@ -57,7 +57,32 @@ const getAllFeedback = async (req, res) => {
   }
 };
 
-
+const updateFeedback = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { rating, comment } = req.body;
+    
+    const feedback = await Feedback.findById(id);
+    
+    if (!feedback) {
+      return res.status(404).json({ message: 'Feedback not found' });
+    }
+    
+    if (feedback.userId.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: 'Not authorized to update this feedback' });
+    }
+    
+    feedback.rating = rating !== undefined ? rating : feedback.rating;
+    feedback.comment = comment !== undefined ? comment : feedback.comment;
+    
+    await feedback.save();
+    
+    res.status(200).json(feedback);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+  
 const deleteFeedback = async (req, res) => {
   try {
     const { id } = req.params;
