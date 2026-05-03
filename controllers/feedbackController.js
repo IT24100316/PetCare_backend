@@ -37,7 +37,25 @@ const getAllFeedback = async (req, res) => {
   }
 };
 
-  
+  const getAverageRatings = async (req, res) => {
+  try {
+    const aggregationResult = await Feedback.aggregate([
+      {
+        $group: {
+          _id: "$serviceType",
+          averageRating: { $avg: "$rating" },
+          totalFeedbacks: { $sum: 1 }
+        }
+      }
+    ]);
+    
+    res.status(200).json(aggregationResult);
+  } catch (error) {
+    res.status(500).json({ message: "error occurred",
+      error: error.message
+     });
+  }
+};
 
 const updateFeedback = async (req, res) => {
   try {
