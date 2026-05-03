@@ -92,3 +92,11 @@ The booking flow validates required dates, supported care types, pet ownership, 
 ## Notifications
 
 The module sends notifications when a booking request is received, cancelled, approved, rejected, or moved back to pending. Notification titles include the care type so users can distinguish boarding from sitting.
+
+## User Test Flow
+
+1. Fetch service rates.
+2. Check availability for the selected date range.
+3. Create a booking with a pet and care details.
+4. Edit the pending booking if the user changes dates or instructions.
+5. Cancel the booking before the first care date if needed.
