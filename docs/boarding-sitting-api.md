@@ -72,3 +72,9 @@ Returns active `Pending` and `Approved` dates for the selected pet. Each item in
 `GET /api/bookings/boarding`
 
 Boarding managers and admins can filter by `status`, `careType`, `startDate`, and `endDate`. Results include populated pet and user details for dashboard review.
+
+## Manager Summary
+
+`GET /api/bookings/boarding/summary`
+
+Returns capacity, upcoming approved booking count, status totals, and approved revenue grouped by care type.
