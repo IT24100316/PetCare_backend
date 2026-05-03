@@ -78,3 +78,9 @@ Boarding managers and admins can filter by `status`, `careType`, `startDate`, an
 `GET /api/bookings/boarding/summary`
 
 Returns capacity, upcoming approved booking count, status totals, and approved revenue grouped by care type.
+
+## Status Update
+
+`PUT /api/bookings/boarding/:id/status`
+
+Boarding managers and admins can set `Pending`, `Approved`, `Rejected`, or `Cancelled`. Capacity is checked again before approval to prevent overbooking.
