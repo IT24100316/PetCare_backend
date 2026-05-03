@@ -1,21 +1,6 @@
 const Feedback = require('../models/Feedback');
 
-const submitFeedback = async (req, res) => {
-  try {
-    const { serviceType, rating, comment } = req.body;
-    
-    const newFeedback = await Feedback.create({
-      userId: req.user._id,
-      serviceType,
-      rating,
-      comment
-    });
-    
-    res.status(201).json(newFeedback);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+
 
 const getAllFeedback = async (req, res) => {
   try {
