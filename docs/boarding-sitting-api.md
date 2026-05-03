@@ -100,3 +100,23 @@ The module sends notifications when a booking request is received, cancelled, ap
 3. Create a booking with a pet and care details.
 4. Edit the pending booking if the user changes dates or instructions.
 5. Cancel the booking before the first care date if needed.
+
+## Manager Test Flow
+
+1. Filter pending boarding and sitting bookings.
+2. Review populated owner, phone, pet, medical notes, and care instructions.
+3. Approve valid bookings after capacity check.
+4. Reject bookings that cannot be handled.
+5. Review the summary endpoint for status counts and approved revenue.
+
+## Frontend Notes
+
+Use `services` for service cards and price previews. Use `available` and `pet-dates` together for calendars: availability shows facility capacity, while pet dates prevent the same pet from being booked twice.
+
+## QA Checklist
+
+- Confirm users cannot book pets they do not own.
+- Confirm duplicate active dates are blocked for the same pet.
+- Confirm approved bookings reduce remaining capacity.
+- Confirm pending bookings can be edited and approved bookings cannot.
+- Confirm manager filters work by status, care type, and date range.
