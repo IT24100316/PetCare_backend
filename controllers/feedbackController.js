@@ -81,21 +81,6 @@ const updateFeedback = async (req, res) => {
   }
 };
 
-const deleteFeedback = async (req, res) => {
-  try {
-    const { id } = req.params;
-    
-    const feedback = await Feedback.findById(id);
-    
-    if (!feedback) {
-      return res.status(404).json({ message: 'Feedback not found' });
-    }
-    
-    await Feedback.findByIdAndDelete(id);
-    res.status(200).json({ message: 'Feedback deleted successfully' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+
 
 module.exports = { submitFeedback, getAllFeedback, getAverageRatings, updateFeedback, deleteFeedback };
