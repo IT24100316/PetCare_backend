@@ -173,7 +173,7 @@ PetCare_backend/
 
 ## 👥 Team
 
-Developed by **Team IT24100316** as part of the Pet Care Management System project.
+Developed by **Team AI-01-G07** as part of the Pet Care Management System project.
 
 ---
 
