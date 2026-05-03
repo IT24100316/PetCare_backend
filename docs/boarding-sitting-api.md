@@ -17,3 +17,16 @@ Rates are calculated on the backend to avoid trusting frontend totals.
 - Sitting daily rate: `1800`
 
 `totalPrice` is calculated as `dailyRate * boardingDates.length`.
+
+## Booking Data
+
+Boarding and sitting bookings can store the following care details:
+
+- `dropOffTime`
+- `pickUpTime`
+- `feedingInstructions`
+- `medicationInstructions`
+- `emergencyContactName`
+- `emergencyContactPhone`
+- `specialCareNotes`
+- `notes`
