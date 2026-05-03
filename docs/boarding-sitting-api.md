@@ -88,3 +88,7 @@ Boarding managers and admins can set `Pending`, `Approved`, `Rejected`, or `Canc
 ## Validation Rules
 
 The booking flow validates required dates, supported care types, pet ownership, duplicate active pet dates, and past start dates. Invalid requests return `400`, missing pets return `404`, and unauthorized pet access returns `403`.
+
+## Notifications
+
+The module sends notifications when a booking request is received, cancelled, approved, rejected, or moved back to pending. Notification titles include the care type so users can distinguish boarding from sitting.
