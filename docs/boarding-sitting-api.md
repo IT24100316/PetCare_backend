@@ -42,3 +42,9 @@ Returns the supported care types, their daily rates, and the daily facility capa
 `GET /api/bookings/boarding/available?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD`
 
 Returns one item per date with `count`, `capacity`, `remainingCapacity`, and `status`. A date becomes `full` when approved bookings reach the configured capacity.
+
+## Create Booking
+
+`POST /api/bookings/boarding/book`
+
+Required fields are `petId`, `careType`, and `boardingDates`. The backend verifies pet ownership, rejects past start dates, prevents duplicate active dates for the same pet, and calculates the price.
