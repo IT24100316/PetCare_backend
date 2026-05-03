@@ -30,3 +30,9 @@ Boarding and sitting bookings can store the following care details:
 - `emergencyContactPhone`
 - `specialCareNotes`
 - `notes`
+
+## Get Services
+
+`GET /api/bookings/boarding/services`
+
+Returns the supported care types, their daily rates, and the daily facility capacity. Use this endpoint to render service cards or price previews in the frontend.
