@@ -19,7 +19,23 @@ const submitFeedback = async (req, res) => {
   }
 };
 
-
+const getAllFeedback = async (req, res) => {
+  try {
+    const { serviceType } = req.query;
+    let query = {};
+    
+    if (serviceType) {
+      query.serviceType = serviceType;
+    }
+    
+    const feedbacks = await Feedback.find(query);
+    res.status(200).json(feedbacks);
+  } catch (error) {
+    res.status(500).json({ message: "error occurred",
+      error: error.message
+     });
+  }
+};
 
 const getAverageRatings = async (req, res) => {
   try {
