@@ -84,3 +84,7 @@ Returns capacity, upcoming approved booking count, status totals, and approved r
 `PUT /api/bookings/boarding/:id/status`
 
 Boarding managers and admins can set `Pending`, `Approved`, `Rejected`, or `Cancelled`. Capacity is checked again before approval to prevent overbooking.
+
+## Validation Rules
+
+The booking flow validates required dates, supported care types, pet ownership, duplicate active pet dates, and past start dates. Invalid requests return `400`, missing pets return `404`, and unauthorized pet access returns `403`.
