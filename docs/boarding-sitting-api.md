@@ -66,3 +66,9 @@ Users can cancel their own future boarding or sitting bookings. The endpoint rej
 `GET /api/bookings/boarding/pet-dates?petId=PET_ID`
 
 Returns active `Pending` and `Approved` dates for the selected pet. Each item includes the date, status, and care type so the UI can mark unavailable calendar dates.
+
+## Manager Booking List
+
+`GET /api/bookings/boarding`
+
+Boarding managers and admins can filter by `status`, `careType`, `startDate`, and `endDate`. Results include populated pet and user details for dashboard review.
