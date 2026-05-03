@@ -60,3 +60,9 @@ Users can update dates, care type, and care instructions while the booking is st
 `DELETE /api/bookings/boarding/:id`
 
 Users can cancel their own future boarding or sitting bookings. The endpoint rejects cancellation once the first booking day has already started.
+
+## Pet Booked Dates
+
+`GET /api/bookings/boarding/pet-dates?petId=PET_ID`
+
+Returns active `Pending` and `Approved` dates for the selected pet. Each item includes the date, status, and care type so the UI can mark unavailable calendar dates.
