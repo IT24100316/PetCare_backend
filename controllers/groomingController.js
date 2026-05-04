@@ -43,6 +43,7 @@ const getAvailableSlots = async (req, res) => {
   }
 };
 
+
 const lockSlot = async (req, res) => {
   try {
     const { date, timeSlot } = req.body;
